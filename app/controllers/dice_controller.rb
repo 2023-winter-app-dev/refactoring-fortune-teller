@@ -1,4 +1,16 @@
 class DiceController < ApplicationController
+  def dynamic
+    @sides = params["sides"].to_i
+    @dice = params["rolls"].to_i
+
+    @array_of_rolls = Array.new
+
+    @dice.times do
+      @array_of_rolls.push(rand(@sides) + 1)
+    end
+
+    render({ :template => "dice_templates/dynamic.html.erb" })
+  end
 
   def one_six
     @array_of_rolls = Array.new
@@ -7,7 +19,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(6) + 1)
     end
 
-    render({:template => "dice_templates/one_six.html.erb"})
+    render({ :template => "dice_templates/one_six.html.erb" })
   end
 
   def two_six
@@ -17,7 +29,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(6) + 1)
     end
 
-    render({:template => "dice_templates/two_six.html.erb"})
+    render({ :template => "dice_templates/two_six.html.erb" })
   end
 
   def three_six
@@ -27,7 +39,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(6) + 1)
     end
 
-    render({:template => "dice_templates/three_six.html.erb"})
+    render({ :template => "dice_templates/three_six.html.erb" })
   end
 
   def four_six
@@ -37,7 +49,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(6) + 1)
     end
 
-    render({:template => "dice_templates/four_six.html.erb"})
+    render({ :template => "dice_templates/four_six.html.erb" })
   end
 
   def five_six
@@ -47,7 +59,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(6) + 1)
     end
 
-    render({:template => "dice_templates/five_six.html.erb"})
+    render({ :template => "dice_templates/five_six.html.erb" })
   end
 
   def six_six
@@ -57,7 +69,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(6) + 1)
     end
 
-    render({:template => "dice_templates/six_six.html.erb"})
+    render({ :template => "dice_templates/six_six.html.erb" })
   end
 
   def one_four
@@ -67,7 +79,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(4) + 1)
     end
 
-    render({:template => "dice_templates/one_four.html.erb"})
+    render({ :template => "dice_templates/one_four.html.erb" })
   end
 
   def two_four
@@ -77,7 +89,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(4) + 1)
     end
 
-    render({:template => "dice_templates/two_four.html.erb"})
+    render({ :template => "dice_templates/two_four.html.erb" })
   end
 
   def three_four
@@ -87,7 +99,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(4) + 1)
     end
 
-    render({:template => "dice_templates/three_four.html.erb"})
+    render({ :template => "dice_templates/three_four.html.erb" })
   end
 
   def four_four
@@ -97,7 +109,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(4) + 1)
     end
 
-    render({:template => "dice_templates/four_four.html.erb"})
+    render({ :template => "dice_templates/four_four.html.erb" })
   end
 
   def one_eight
@@ -107,7 +119,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(8) + 1)
     end
 
-    render({:template => "dice_templates/one_eight.html.erb"})
+    render({ :template => "dice_templates/one_eight.html.erb" })
   end
 
   def two_eight
@@ -117,7 +129,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(8) + 1)
     end
 
-    render({:template => "dice_templates/two_eight.html.erb"})
+    render({ :template => "dice_templates/two_eight.html.erb" })
   end
 
   def three_eight
@@ -127,7 +139,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(8) + 1)
     end
 
-    render({:template => "dice_templates/three_eight.html.erb"})
+    render({ :template => "dice_templates/three_eight.html.erb" })
   end
 
   def one_ten
@@ -137,7 +149,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(10) + 1)
     end
 
-    render({:template => "dice_templates/one_ten.html.erb"})
+    render({ :template => "dice_templates/one_ten.html.erb" })
   end
 
   def two_ten
@@ -147,7 +159,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(10) + 1)
     end
 
-    render({:template => "dice_templates/two_ten.html.erb"})
+    render({ :template => "dice_templates/two_ten.html.erb" })
   end
 
   def one_twenty
@@ -157,7 +169,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(20) + 1)
     end
 
-    render({:template => "dice_templates/one_twenty.html.erb"})
+    render({ :template => "dice_templates/one_twenty.html.erb" })
   end
 
   def two_twenty
@@ -167,7 +179,7 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(20) + 1)
     end
 
-    render({:template => "dice_templates/two_twenty.html.erb"})
+    render({ :template => "dice_templates/two_twenty.html.erb" })
   end
 
   def three_twenty
@@ -177,6 +189,6 @@ class DiceController < ApplicationController
       @array_of_rolls.push(rand(20) + 1)
     end
 
-    render({:template => "dice_templates/three_twenty.html.erb"})
+    render({ :template => "dice_templates/three_twenty.html.erb" })
   end
 end
